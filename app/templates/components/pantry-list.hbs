@@ -1,0 +1,30 @@
+<ul class="list-group">
+
+  <div class="row">
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-secondary">add</button>
+        <button type="button" class="btn btn-secondary">+</button>
+        <button type="button" class="btn btn-secondary">-</button>
+      </div>
+      <input type="text" class="form-control" aria-label="text input with segmented button dropdown">
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    {{#each list as |item|}}
+      <li class="list-group-item" {{action "select" item}}>
+        <span class="label label-default label-pill pull-right">
+          {{item.amount}}
+        </span>{{item.name}}
+      </li>
+    {{/each}}
+  </div>
+</ul>
+<br>
+
+<div class="row">
+  <progress class="progress" value="" max="{{list.items.length}}">0%</progress>
+</div>
