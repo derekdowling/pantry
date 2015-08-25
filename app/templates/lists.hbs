@@ -19,7 +19,7 @@
     {{#each model as |list|}}
       <li class="list-group-item" {{action "select" item}}>
         <span class="label label-default label-pill pull-right">
-          {{list.items.length}}
+          {{list.items.length}}{{test}}
         </span>{{list.name}}
       </li>
     {{/each}}
