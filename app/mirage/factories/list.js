@@ -3,10 +3,10 @@
 
   Create more files in this directory to define additional factories.
 */
-import Mirage/*, {faker} */ from 'ember-cli-mirage';
+import Mirage, {faker} from 'ember-cli-mirage';
 
 export default Mirage.Factory.extend({
   id(i) { return i; },
-  name(i) { return `Pantry ${i}`; },
-  items: [{name: "Feta", amount: 1},{name: "Bread", amount: 1}]
+  "list-name": faker.company.companyName,
+  "pantry-items": [{name: "Feta", amount: 1},{name: "Bread", amount: 1}]
 });

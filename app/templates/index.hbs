@@ -1,7 +1,24 @@
-<br><br><br>
+<h2 class="display-1">Lists</h2>
 
-<div class="row">
-  <div class="col-md-offset-3 col-md-6">
-    {{pantry-list list=model}}
+<ul class="list-group">
+  <div class="row">
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="text input with segmented button dropdown">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-secondary">+</button>
+      </div>
+    </div>
   </div>
-</div>
+
+  <br>
+
+  <div class="row">
+    {{#each model as |list|}}
+      <li class="list-group-item">
+        <span class="label label-default label-pill pull-right">
+          {{list.pantry-items.length}}
+        </span>{{list.list-name}}
+      </li>
+    {{/each}}
+  </div>
+</ul>
