@@ -1,0 +1,17 @@
+<table class="hoverable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |list|}}
+      {{#link-to 'lists.index' list tagName='tr'}}
+        <th>{{list.name}}</th>
+        <th>{{list.items.length}}</th>
+      {{/link-to}}
+    {{/each}}
+  </tbody>
+</table>
+

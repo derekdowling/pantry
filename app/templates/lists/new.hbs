@@ -1,0 +1,33 @@
+<h2>New List</h2>
+
+<form>
+  <div class="row">
+    <div class="input-field col m8">
+      {{input placeholder="List Name" value=list.name required=true}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col m8">
+      <h6>Add Items</h6>
+      {{input value=itemName placeholder="New Item Name" enter="addItem"}}
+      {{#if items}}
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each items as |item|}}
+              <tr>
+                <th>{{item.name}}</th>
+                <th>{{item.amount}}</th>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{/if}}
+    </div>
+  </div>
+</form>
