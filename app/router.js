@@ -7,9 +7,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('lists', function() {
+    this.route('all');
     this.route('new');
-    this.route('all', {path: '/'})
-    this.route('index', {path: '/:list_id'});
+    this.route('modify', {path: '/:list_id'});
   });
 });
 

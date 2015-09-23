@@ -18,7 +18,8 @@ module.exports = function(environment) {
       'font-src': "'self'",
       'connect-src': "'self'",
       'img-src': "'self'",
-      'media-src': "'self'"
+      'media-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com"
     },
     APP: {
       // Here you can pass flags/options to your application instance

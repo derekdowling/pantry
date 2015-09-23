@@ -1,0 +1,44 @@
+{{#unless changeName}}
+<h3 {{action "changeName"}}>{{list.name}}</h3>
+{{else}}
+{{input type="text" value=list.name enter="saveName"}}
+{{/unless}}
+<table class="hoverable">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each list.items as |item|}}
+      <tr>
+        <th>{{item.name}}</th>
+        <th>{{item.amount}}</th>
+      </tr>
+    {{/each}}
+    <tr {{action "toggleAddItem"}}>
+      {{#unless addItemToggle}}
+        <th>Add Item</th>
+        <th></th>
+      {{else}}
+        <th>{{input type='text' placeholder='Item Name' value=newItemName}}</th>
+        <th>
+          <div class='col l5'>
+            {{input type='number' placeholder='Amount' classBindings='col l5' value=newItemAmount}}
+          </div>
+        </th>
+      {{/unless}}
+    </tr>
+  </tbody>
+  {{#if addItemToggle}}
+    <div class='row'>
+      <div class='col l3'>
+        <button class="btn waves-effect waves-light" {{action "toggleAddItem"}}>Cancel</button>
+      </div>
+      <div class='col l3'>
+        <button class="btn waves-effect waves-light" {{action "addItem"}}>Add Item</button>
+      </div>
+    </div>
+  {{/if}}
+</table>

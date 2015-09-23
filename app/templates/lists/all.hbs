@@ -7,7 +7,7 @@
   </thead>
   <tbody>
     {{#each model as |list|}}
-      {{#link-to 'lists.index' list tagName='tr'}}
+      {{#link-to 'lists.modify' list tagName='tr'}}
         <th>{{list.name}}</th>
         <th>{{list.items.length}}</th>
       {{/link-to}}
